@@ -9,6 +9,9 @@
 6. 属性读取方法
 7. @property 装饰器
 ```
+目录
+
+[TOC]
 
 # 1. 定义类
 
@@ -204,26 +207,30 @@ class C(A, B):
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C  
 
  输出：
- ```
- >>> c = C()
-enter C
-enter A
-enter B
-enter Base
-leave Base
-leave B
-leave A
-leave C
- ```
+
+```
+c = C()        
+enter C  
+enter A  
+enter B  
+enter Base  
+leave Base  
+leave B  
+leave A  
+leave C  
+
+```
+
+
  MRO 列表
 
  事实上，对于你定义的每一个类，Python 会计算出一个方法解析顺序（Method Resolution Order, MRO）列表，它代表了类继承的顺序，我们可以使用下面的方式获得某个类的 MRO 列表：
 
- ```Python
+```
 >>> C.mro()  
   # or C.__mro__ or C().__class__.mro()
 [__main__.C, __main__.A, __main__.B, __main__.Base, object]
- ```
+```
 
  - 子类永远在父类前面
  - 如果有多个父类，会根据它们在列表中的顺序被检查
@@ -272,7 +279,10 @@ def super(cls, inst):
 >>> s
 ```
 
-![](assets/Python3 简明教程-类-b30e397c.png)
+
+![](assets/Python3 简明教程-类-f5c15243.png)
+
+
 
 # 6. 属性读取方法
 在JAVA中常用属性读取方法（getters,setters），但在python直接使用属性就可以里。
@@ -362,7 +372,7 @@ class Person:
     def name(self,name):
          if not isinstance(name, str):
             raise TypeError("Expected a string")
-        self._name = name
+         self._name = name
 
 p = Person('tom')
 >>>print(p.name)
@@ -372,6 +382,7 @@ tom
 typeerror:Expected a string
 
 ```
+
 还可以只给getter方法，不写setter方法，相当于对参数的写入保护
 ```python
 class Person(object):
