@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for file in files: %}                                                    
+<ul class="list-group">
+  <li class="list-group-item"><a href="{{url_for('file',file_id=file.id)}}"> {{ file.title }}</a>                   
+      {% for tagone in file.tags %}                         
+      <span class="label label-success"> {{ tagone }} </span>  
+      {% endfor %}
+                                             
+  </li>                                                  
+</ul>
+
+{% endfor %} 
+
+{% endblock %}

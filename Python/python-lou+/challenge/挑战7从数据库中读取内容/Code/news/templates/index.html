@@ -1,0 +1,14 @@
+
+
+{% for file in files:  %}
+<ul>
+    <li><a href="{{url_for('file',file_id=file.id)}}"> {{ file.title  }} </a>  
+    </li>
+</ul>   
+
+
+
+{% endfor %}
+
+
+
